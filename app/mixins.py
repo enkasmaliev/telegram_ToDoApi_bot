@@ -24,7 +24,7 @@ class CRUDMixin:
         if response.status_code == 200:
             return json.loads(response.text)
         elif response.status_code == 404:
-            raise Exception('Нет такой записи')
+            raise Exception('id не найден')
         raise Exception('Непредвиденная ошибка')
 
     def update(self, id_, title):
